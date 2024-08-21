@@ -20,7 +20,9 @@
 .left-side,
 .right-side {
   height: 100%;
-  width: 50%;
+  flex-basis: 30%;
+  flex-grow: 1;
+  transition: 0.8s;
 }
 
 .left-side {
@@ -29,4 +31,61 @@
 
 .right-side {
   background: url("./assets/images/5.png") center/cover no-repeat;
+}
+
+.left-content,
+.right-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  backdrop-filter: blur(5px);
+  transition: 0.8s;
+}
+
+.left-side:hover,
+.right-side:hover {
+  flex-grow: 5;
+}
+
+.left-side:hover .left-content,
+.right-side:hover .right-content {
+  backdrop-filter: blur(0px);
+}
+
+.left-content {
+  background-color: rgba(121, 121, 243, 0.5);
+}
+
+.right-content {
+  background-color: rgba(174, 163, 114, 0.5);
+}
+
+h2 {
+  font-size: 70px;
+  color: whitesmoke;
+  font-weight: 800;
+}
+
+button {
+  color: whitesmoke;
+  border: 3px solid white;
+  padding: 20px 40px;
+  background: none;
+  transition: 0.3s;
+}
+
+.left-content button:hover {
+  background-color: rgba(121, 121, 243, 0.9);
+  border: 3px solid rgba(121, 121, 243, 0.9);
+  cursor: pointer;
+}
+
+.right-content button:hover {
+  background-color: rgba(174, 163, 114, 0.9);
+  border: 3px solid rgba(174, 163, 114, 0.9);
+  cursor: pointer;
 }
